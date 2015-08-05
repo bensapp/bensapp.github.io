@@ -1,1 +1,1139 @@
-hi
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./_bensapp_files/analytics.js"></script>
+<link type="text/css" rel="stylesheet" href="./_bensapp_files/banner-styles.css">
+  <script language="javascript" type="text/javascript">
+    var inpic = false;
+    function mouseOver() {
+      keywords = ["","_pb", "_ncut", "_hog" ];
+      var key = keywords[Math.floor(Math.random()*keywords.length)];
+      imgfile = "me-blossoms"+key+".jpg";
+      document.pic.src = imgfile;
+    }
+
+    function mouseOut() {
+      document.pic.src = "me-blossoms.jpg";
+    }
+
+  function toggleBib(div_name) {
+      disp = document.getElementById(div_name).style.display;
+      if (disp == 'block') {
+          disp = 'none';
+      }
+      else {
+          disp = 'block';
+      }
+    
+    document.getElementById(div_name).style.display = disp;
+  }
+
+
+  function toggleDiv(div_name) {
+      toggleAllDivs('none');
+      linkname = div_name + 'link';
+      document.getElementById(div_name).style.display = 'block';
+      document.getElementById(linkname).style.background = 'darkgreen';
+      document.getElementById(linkname).style.borderLeft = '1px solid white';
+      document.getElementById(linkname).style.borderRight = '1px solid white';
+    }
+
+    function toggleAllDivs(off_or_on){
+      var divs = document.getElementsByTagName('div');
+      for (var i=0;i < divs.length; i++) {
+        if (divs[i].className == 'section'){
+            divs[i].style.display = off_or_on;
+            linkname = divs[i].id + 'link';
+            document.getElementById(linkname).style.background = ''; 
+            document.getElementById(linkname).style.border = ''; 
+        }
+      }
+    }
+
+    function toggleAllDivsLink(){
+      expand_cmd = '[+]';
+      collapse_cmd = '[-]';
+      cmd = document.getElementById("expandcollapse").textContent;
+      div_mode = (cmd == expand_cmd) ? 'block' : 'none';
+      document.getElementById("expandcollapse").textContent = 
+          (cmd == expand_cmd) ? collapse_cmd : expand_cmd;
+      var divs = document.getElementsByTagName('div');
+      for (var i=0;i < divs.length; i++) {
+          if (divs[i].className == 'section'){
+             divs[i].style.display = div_mode;
+
+          }
+      }
+   }
+
+
+  function randbg(){
+    var num=Math.floor(Math.random()*48);
+    document.body.style.backgroundImage='url(bgtiles/'+num+'.png)';
+    document.body.style.backgroundAttachment="fixed";
+
+  }
+
+</script> 
+
+<script type="text/javascript">
+</script>
+
+<style type="text/css">
+  body {
+    background: #27353D; 
+    background-attachment: fixed;
+  }
+
+    div#jobplea{
+        
+        border: 1px dashed gray;
+        background: rgb(250,255,200);
+        padding: 8px;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-bottom: 5px;
+      }
+      
+      div#toppart {
+      
+      border: 1px solid gray;
+      background: white;
+      padding: 10px;
+      margin-bottom: 5px;
+    }
+
+
+    div.body {
+      padding: 2%;
+      border: 0px solid;
+      float: left;
+      width: 800px;
+      font-family: Helvetica;
+      font-size: 14px;
+
+    }
+
+    div.section { 
+      display: none;
+      background: white;
+      padding: 10px;
+      border: 1px solid gray;
+      font-family: Helvetica;
+    }
+
+    div.toplinksbar{
+      display: block; 
+      border: 1px solid gray;
+      clear: left;
+      padding: 5px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      cursor: pointer;
+      color: white;
+      font-size: 14px;
+      font-weight: 80;
+      background: rgb(44,44,44);
+      }
+  
+    a.toplinks{
+      padding: 5px;
+      font-size: 14px;
+      color: white;
+      font-weight: 80;
+    }
+
+    div.header {
+      display: block; 
+      border: 1px solid gray;
+      clear: left;
+      padding: 1px;
+      margin-bottom: 1px;
+      margin-top: 1px;
+      cursor: pointer;
+      color: white;
+      font-size: 20px;
+      font-weight: 100;
+    }
+
+    div#research{
+      display: block;
+    }
+    
+    a#piclink { cursor: pointer;}
+    a {text-decoration: none; color: darkslategray;} 
+    a:visited {text-decoration: none; color: darkslategray;} 
+    a:hover {text-decoration: underline;}
+    a.bibtex {
+      cursor: pointer;
+    }
+    
+
+      table {
+        border: 0px solid green;
+        padding-right: 30px;
+
+      }
+
+      td {
+        font-size: 14px;
+        vertical-align: middle;
+        padding-bottom: 0px;
+        padding-right: 30px;
+        border-bottom: 0px dotted gray;
+      }
+      td.paper {
+        vertical-align: bottom;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted gray;
+      }
+    
+
+
+    div#pic img{
+      height: 240px;
+      border: 1px solid gray;
+    }
+    
+    div.bibtex {
+    display:none;
+    border: 1px dashed;
+    background-color: rgb(235,235,235);
+    padding: 10px;
+    }
+
+
+    div.title {
+      display: block;
+      border-bottom: 0px solid;
+      font-size: 16px;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    div.paper {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    float: left;
+    background-color: none;
+    }
+
+    div.paperstuff {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    clear: both;
+    background-color: none;
+    font-size:75%;
+    }
+
+    td.pic{
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+
+    td.blurb {
+    font-size: 14px;
+      vertical-align: middle;
+      padding: 50px;
+    }
+
+    td.thumb {
+      padding-left: 5px;
+      padding-right: 5px;
+      text-align: middle;
+      vertical-align: middle;
+      border: 0px;
+    }
+
+    td.thumb img {
+      height: 0px;
+      width: 0px;
+      border: 0px solid;
+    }
+
+    div#blurb{
+    float: left;
+        background: white;
+        padding-left: 5px;
+        border: 0px solid;
+    }
+
+    pre {
+    font-size:100%;
+    }
+    div#randbg{
+    border: 1px solid gray;
+    padding: 2 4 2 4px;
+      cursor: pointer;
+      float: left;
+      background-color: white;
+      font-size: 12px;
+    }
+
+    div#expandcollapse{
+      padding-bottom: 10px;
+      cursor: pointer;
+      float: right;
+      background-color: none;
+    }
+
+    h2 {
+      background-color: none;
+      margin-bottom: 0px;
+      display: inline;
+    }
+    h3 {
+    }
+    h4 {
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+</style><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "/web/20141007090913/https://ssl." : "/web/20141007090913/http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./_bensapp_files/ga.js" type="text/javascript"></script><script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7051488-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></head>
+
+
+
+
+
+
+
+<body><div id="wm-ipp" lang="en" style="display: none;">
+
+<div style="position:fixed;left:0;top:0;width:100%!important">
+<div id="wm-ipp-inside">
+   <table style="width:100%;"><tbody><tr>
+   <td id="wm-logo">
+       <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="./_bensapp_files/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"></a>
+   </td>
+   <td class="c">
+       <table style="margin:0 auto;"><tbody><tr>
+       <td class="u" colspan="2">
+       <form target="_top" method="get" action="https://web.archive.org/web/form-submit.jsp" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://www.seas.upenn.edu/~bensapp" style="width:400px;" onfocus="this.focus();this.select();"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20141007090913"><input type="submit" value="Go"><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td class="n" rowspan="2">
+           <table><tbody>
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr class="m">
+            <td class="b" nowrap="nowrap">
+    
+        <a href="https://web.archive.org/web/20140829094432/http://www.seas.upenn.edu/~bensapp/" title="29 Aug 2014">AUG</a>
+    
+    </td>
+    <td class="c" id="displayMonthEl" title="You are here: 9:09:13 Oct 7, 2014">OCT</td>
+    <td class="f" nowrap="nowrap">
+    
+        Nov
+    
+                </td>
+      </tr>
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr class="d">
+               <td class="b" nowrap="nowrap">
+               
+                   <a href="https://web.archive.org/web/20140829094432/http://www.seas.upenn.edu/~bensapp/" title="9:44:32 Aug 29, 2014"><img src="./_bensapp_files/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0"></a>
+               
+               </td>
+               <td class="c" id="displayDayEl" style="width:34px;font-size:24px;" title="You are here: 9:09:13 Oct 7, 2014">7</td>
+         <td class="f" nowrap="nowrap">
+               
+                   <img src="./_bensapp_files/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0">
+               
+         </td>
+           </tr>
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr class="y">
+         <td class="b" nowrap="nowrap">
+               
+                   <a href="https://web.archive.org/web/20131005180310/http://www.seas.upenn.edu/~bensapp/" title="5 Oct 2013"><strong>2013</strong></a>
+               
+               </td>
+               <td class="c" id="displayYearEl" title="You are here: 9:09:13 Oct 7, 2014">2014</td>
+         <td class="f" nowrap="nowrap">
+               
+                   2015
+               
+         </td>
+           </tr>
+           </tbody></table>
+       </td>
+       </tr>
+       <tr>
+       <td class="s">
+           <a class="t" href="https://web.archive.org/web/20141007090913*/http://www.seas.upenn.edu/~bensapp" title="See a list of every capture for this URL">60 captures</a>
+           <div class="r" title="Timespan for captures of this URL">4 May 08 - 7 Oct 14</div>
+       </td>
+       <td class="k">
+       <a href="" id="wm-graph-anchor">
+       <div id="wm-ipp-sparkline" title="Explore captures for this URL">
+   <img id="sparklineImgId" alt="sparklines" onmouseover="__wm.st(1)" onmouseout="__wm.st(0)" onmousemove="__wm.mv(event,this)" width="500" height="27" border="0" src="./_bensapp_files/graph.jsp">
+       <div class="yt" style="display: none; width: 25px; height: 27px;"></div><div class="mt" style="display: none; width: 2px; height: 27px;"></div></div>
+       </a>
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td class="r">
+       <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~bensapp#close" onclick="__wm.h();return false;" style="background-image:url(/static/images/toolbar/wm_tb_close.png);top:5px;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="background-image:url(/static/images/toolbar/wm_tb_help.png);bottom:5px;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+</div>
+</div>
+</div>
+
+
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="./_bensapp_files/disclaim-element.js"></script>
+<script type="text/javascript" src="./_bensapp_files/graph-calc.js"></script>
+<script type="text/javascript" src="./_bensapp_files/jquery.min.js"></script>
+<script type="text/javascript">//<![CDATA[
+var __wm = (function(){
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http://www.seas.upenn.edu/~bensapp";
+
+var firstYear = 1996;
+var imgWidth = 500,imgHeight = 27;
+var yearImgWidth = 25,monthImgWidth = 2;
+var displayDay = "7";
+var displayMonth = "Oct";
+var displayYear = "2014";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var $D=document,$=function(n){return document.getElementById(n)};
+var trackerVal,curYear = -1,curMonth = -1;
+var yearTracker,monthTracker;
+function showTrackers(val) {
+  if (val===trackerVal) return;
+  var $ipp=$("wm-ipp");
+  var $y=$("displayYearEl"),$m=$("displayMonthEl"),$d=$("displayDayEl");
+  if (val) {
+    $ipp.className="hi";
+  } else {
+    $ipp.className="";
+    $y.innerHTML=displayYear;$m.innerHTML=displayMonth;$d.innerHTML=displayDay;
+  }
+  yearTracker.style.display=val?"inline":"none";
+  monthTracker.style.display=val?"inline":"none";
+  trackerVal = val;
+}
+function getElementX2(obj) {
+  var $e=jQuery(obj);
+  return (typeof $e=="undefined"||typeof $e.offset=="undefined")?
+    getElementX(obj):Math.round($e.offset().left);
+}
+function trackMouseMove(event,element) {
+  var eventX = getEventX(event);
+  var elementX = getElementX2(element);
+  var xOff = Math.min(Math.max(0, eventX - elementX),imgWidth);
+  var monthOff = xOff % yearImgWidth;
+
+  var year = Math.floor(xOff / yearImgWidth);
+  var monthOfYear = Math.min(11,Math.floor(monthOff / monthImgWidth));
+  // 1 extra border pixel at the left edge of the year:
+  var month = (year * 12) + monthOfYear;
+  var day = monthOff % 2==1?15:1;
+  var dateString = zeroPad(year + firstYear) + zeroPad(monthOfYear+1,2) +
+    zeroPad(day,2) + "000000";
+
+  $("displayYearEl").innerHTML=year+firstYear;
+  $("displayMonthEl").innerHTML=prettyMonths[monthOfYear];
+  // looks too jarring when it changes..
+  //$("displayDayEl").innerHTML=zeroPad(day,2);
+  var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+  $("wm-graph-anchor").href=url;
+
+  if(curYear != year) {
+    var yrOff = year * yearImgWidth;
+    yearTracker.style.left = yrOff + "px";
+    curYear = year;
+  }
+  if(curMonth != month) {
+    var mtOff = year + (month * monthImgWidth) + 1;
+    monthTracker.style.left = mtOff + "px";
+    curMonth = month;
+  }
+}
+function hideToolbar() {
+  $("wm-ipp").style.display="none";
+}
+function bootstrap() {
+  var $spk=$("wm-ipp-sparkline");
+  yearTracker=$D.createElement('div');
+  yearTracker.className='yt';
+  with(yearTracker.style){
+    display='none';width=yearImgWidth+"px";height=imgHeight+"px";
+  }
+  monthTracker=$D.createElement('div');
+  monthTracker.className='mt';
+  with(monthTracker.style){
+    display='none';width=monthImgWidth+"px";height=imgHeight+"px";
+  }
+  $spk.appendChild(yearTracker);
+  $spk.appendChild(monthTracker);
+
+  var $ipp=$("wm-ipp");
+  $ipp&&disclaimElement($ipp);
+}
+return{st:showTrackers,mv:trackMouseMove,h:hideToolbar,bt:bootstrap};
+})();//]]>
+</script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  min-width:800px !important;
+}
+</style>
+
+<script type="text/javascript">__wm.bt();</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+  
+  <div class="body">
+
+
+    <div id="toppart">
+    <table border="0">
+
+
+      <tbody><tr><td class="pic">
+    <div id="pic">
+  <a id="piclink" onmousemove="mouseOver()" onmouseout="mouseOut()" onclick="javascript:randbg()">
+      <img name="pic" src="./_bensapp_files/me-blossoms.jpg">
+    </a> 
+    </div>
+    </td><td class="blurb">
+    <h2>Benjamin John Sapp</h2><br>
+    Ph.D. Candidate<br>
+    Computer and Information Science<br>
+    University of Pennsylvania<br>
+    <a href="mailto:bensapp@cis.upenn.edu">bensapp@cis.upenn.edu</a>
+    <br>
+
+</td></tr></tbody></table>
+
+
+</div>
+
+<div class="toplinksbar">
+  <a class="toplinks" id="aboutlink" onclick="javascript:toggleDiv(&#39;about&#39;)" style="background: green; border-left: 1px solid white; border-right: 1px solid white;">About Me</a>
+  <a class="toplinks" id="researchlink" onclick="javascript:toggleDiv(&#39;research&#39;)">Publications</a>
+  <a class="toplinks" id="resumelink" onclick="javascript:toggleDiv(&#39;resume&#39;)">Professional</a>
+  <a class="toplinks" id="educationlink" onclick="javascript:toggleDiv(&#39;education&#39;)">Education</a>
+  <a class="toplinks" id="contactlink" onclick="javascript:toggleDiv(&#39;contact&#39;)">Contact</a>
+</div>
+
+
+
+  <div id="about" class="section" style="display: block;">
+    <h2>News</h2>
+    <br>
+    <br>
+    <ul>
+      <li> Thesis stuff up on <a id="researchlink2" onclick="javascript:toggleDiv(&#39;research&#39;)">publications</a> page.
+      </li><li><a href="https://web.archive.org/web/20141007090913/http://vision.grasp.upenn.edu/cgi-bin/index.php?n=VideoLearning.MODEC">MODEC code released.</a></li>
+      <li> I am happy to announce I will join <img height="20" style="vertical-align: middle;" src="./_bensapp_files/google.jpg"> in Mountain View, CA in December, 2012.</li>
+      <li> Results from CVPR11 paper <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/cvpr2011stretchable.pdf">Stretchable Models</a>:
+<br>
+      <iframe width="240" style="display: inline-block; vertical-align: middle;" src="./_bensapp_files/vnOh8_D3RhQ.html" frameborder="0" allowfullscreen=""></iframe>
+      </li><li> Soccer! I organize an informal recreational soccer pickup group for Penn grad students.  Come one, come all.  Subscribe to the mailing list: <a href="https://web.archive.org/web/20141007090913/http://groups.google.com/group/penn-pickup-soccer">http://groups.google.com/group/penn-pickup-soccer</a>.  Also, I made <a href="https://web.archive.org/web/20141007090913/http://vision.grasp.upenn.edu/cgi-bin/pennpark.py">an easy-to-read calendar</a> which shows what Penn fields are free (unreserved).
+
+    <br>
+    </li><li> Parsing Human Motion with Stretchable Models code is <a href="https://web.archive.org/web/20141007090913/http://vision.grasp.upenn.edu/cgi-bin/index.php?n=VideoLearning.StretchableModelsCode">out</a>.
+    <br>
+    </li><li> I'm teaching <a href="https://web.archive.org/web/20141007090913/http://learning.cis.upenn.edu/ai-challenge/Main/HomePage">Intelligent Game Agents</a> this Fall 2012, along with <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~jengi">Jenny</a> and <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~dwe/">David</a>.
+      </li></ul>
+
+    <h2>About</h2><br><br>
+    I'm a Ph.D. candidate in my <strike>second</strike> <strike>third</strike> 
+    <strike>fourth</strike> fifth year in the <a href="https://web.archive.org/web/20141007090913/http://www.cis.upenn.edu/">Computer and Information Science</a> 
+    department at the <a href="https://web.archive.org/web/20141007090913/http://www.upenn.edu/">University of 
+      Pennsylvania</a>.  
+    
+    I work with my advisor <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar">Ben 
+      Taskar</a> solving computer vision problems with machine learning.  Most 
+    of my work has been in using graphical models to solve human pose 
+    estimation in 2D images or video.  Specifically, we study how to 
+    overcome computational bottlenecks that handicap most models applied to 
+    this problem, allowing us to design more expressive models with richer 
+    features that do better.  
+    <br><br>
+    Bio:<br> San Diego, CA --&gt; Bay Area --&gt; Champaign-Urbana, IL --&gt; Stanford, CA --&gt; Princeton, NJ --&gt; Philadelphia, PA 
+     <br><br>
+
+    
+</div>
+
+<div id="research" class="section" style="display: none;">
+  <ul>
+    <li>
+  A <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/wordle.net">wordle</a> summary of my papers<br>
+  <a href="./_bensapp_files/wordle.png"><img src="./_bensapp_files/wordle.png" height="128"></a>
+  
+  <!-- <div align=left style="background: rgb(240,240,240);  padding: 5px; "> -->
+    </li><li>
+  <a href="https://web.archive.org/web/20141007090913/http://scholar.google.com/citations?user=aPqcyU4AAAAJ&hl=en">Google Scholar page</a> 
+  </li><li>
+  <a href="https://web.archive.org/web/20141007090913/http://academic.research.microsoft.com/Author/3572419/benjamin-sapp">Microsoft Academic page</a><br>
+</li></ul>
+<!-- </div> -->
+
+   <br>
+
+  <h2> Refereed conferences and journals </h2>
+  <br>
+  <br>
+  <table> <!-- paper table -->
+
+    <tbody><tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td>
+
+      <td class="paper"><div class="paper">
+          <div class="title"><b>Thesis:</b> Efficient Human Pose Estimation with Image-dependent 
+            Interactions</div>
+          Benjamin Sapp
+<br>University of Pennsylvania, 2012
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/thesis.pdf">paper</a>
+  | <a href="https://web.archive.org/web/20141007090913/https://github.com/bensapp/thesis">latex source</a> 
+  | <a href="https://web.archive.org/web/20141007090913/https://dl.dropbox.com/u/9446159/phd-talk-defense-package.zip">slides</a>
+  | <a class="bibtex" onclick="javascript:toggleBib(&#39;thesisbib&#39;)">bibtex</a> 
+  </div>
+
+<div class="bibtex" id="thesisbib" style="display:none;">
+  <pre>@inproceedings{sapp-thesis,
+     author = "Benjamin Sapp",
+     title = "Efficient Human Pose Estimation with Image-dependent Interactions",
+     year = "2012"
+}
+</pre>
+</div> <!-- end paper -->
+</td></tr>
+
+    <tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td>
+
+      <td class="paper"><div class="paper">
+<div class="title">MODEC: Multimodal Decomposable Models for Human Pose Estimation</div>
+Benjamin Sapp, 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar/">Ben Taskar</a>
+<br>CVPR 2013 
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/cvpr13-modec.pdf">paper</a>
+  | <a class="bibtex" onclick="javascript:toggleBib(&#39;cvpr2013bib&#39;)">bibtex</a> 
+  </div>
+
+<div class="bibtex" id="cvpr2013bib" style="display:none;">
+  <pre>@inproceedings{modec13,
+     author = "Benjamin Sapp and Ben Taskar",
+     title = "MODEC",
+     booktitle = "CVPR",
+     year = "2013"
+}
+</pre>
+</div> <!-- end paper -->
+</td></tr>
+
+
+
+    <tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td>
+
+
+      <td class="paper"><div class="paper">
+<div class="title">Practicality of Accelerometer Side-Channel on Smartphones</div>
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://experience2.org/">Adam J. Aviv</a>, 
+Ben Sapp, 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://crypto.com/">Matt Blaze</a>, and 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~jms/">Jonathan M. Smith</a><br> 
+ACSAC 2012
+</div>
+<div class="paperstuff">
+  paper
+  | <a class="bibtex" onclick="javascript:toggleBib(&#39;acsac12bib&#39;)">bibtex</a> 
+  </div>
+
+<div class="bibtex" id="acsac12bib" style="display:none;">
+  <pre>@inproceedings{aviv2012acsac,
+     author = "Adam J. Aviv and Benjamin Sapp and Matt Blaze and Jonathan M. Smith",
+     title = "Practicality of Accelerometer Side-Channel on Smartphones",
+     booktitle = "ACSAC",
+     year = "2012"
+}
+</pre>
+</div> <!-- end paper -->
+</td></tr>
+
+
+    <tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td>
+
+
+      <td class="paper"><div class="paper">
+<div class="title">Parsing Human Motion with Stretchable Models (oral)</div>
+Benjamin Sapp, 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~dwe/">David Weiss</a> and
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar/">Ben Taskar</a>
+<br>CVPR 2011 
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/cvpr2011stretchable.pdf">paper</a>
+  | talk <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/cvpr2011stretchable-talk.pdf">pdf</a>/<a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/cvpr2011stretchable-talk.pptx">pptx</a> 
+  | <a href="https://web.archive.org/web/20141007090913/http://vision.grasp.upenn.edu/cgi-bin/index.php?n=VideoLearning.VideoPose2">VideoPose2.0 dataset</a> 
+  | <a class="bibtex" onclick="javascript:toggleBib(&#39;cvpr2011bib&#39;)">bibtex</a> 
+  </div>
+
+<div class="bibtex" id="cvpr2011bib" style="display:none;">
+  <pre>@inproceedings{sapp2011cvpr,
+     author = "Benjamin Sapp and David Weiss and Ben Taskar",
+     title = "Parsing Human Motion with Stretchable Models",
+     booktitle = "CVPR",
+     year = "2011"
+}
+</pre>
+</div> <!-- end paper -->
+</td></tr>
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+
+<div class="paper">
+<div class="title">Learning from Partial Labels</div>
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~timothee/">Timothee Cour</a>, 
+Benjamin Sapp,
+and <a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar/">Ben Taskar</a> 
+<br> JMLR 2011 <br>
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/partial-labels-jmlr.pdf">paper</a>
+| <a class="bibtex" onclick="javascript:toggleBib(&#39;namingjmlrbib&#39;)">bibtex</a>
+</div>
+
+<div class="bibtex" id="namingjmlrbib" style="display:none;">
+  <pre>@article{cour2011jmlr,
+     author = "Timothee Cour and Benjamin Sapp and Ben Taskar",
+     title = "Learning from Partial Labels",
+     journal = "JMLR",
+     year = "2011"
+}
+</pre>
+</div> <!-- end paper -->
+</td></tr>
+
+
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="title">Sidestepping Intractable Inference with Structured Ensemble Cascades</div>
+<div class="paper">
+Benjamin Sapp, 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~dwe/">David Weiss</a> and
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar/">Ben Taskar</a>. 
+<br>NIPS 2010
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/nips2010_tracking.pdf">paper</a> | <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/nips2010poster.pdf">poster</a> | <a href="https://web.archive.org/web/20141007090913/http://www.vision.grasp.upenn.edu/video">project</a>
+  | <a class="bibtex" onclick="javascript:toggleBib(&#39;nips2010bib&#39;)">bibtex</a> 
+  </div>
+
+<div class="bibtex" id="nips2010bib" style="display:none;">
+  <pre>@inproceedings{sapp2010nips,
+     author = "Benjamin Sapp and David Weiss and Ben Taskar",
+     title = "Sidestepping Intractable Inference with Structured Ensemble Cascades.",
+     booktitle = "NIPS",
+     year = "2010"
+}
+</pre>
+</div> <!-- end paper -->
+</td></tr>
+
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+  <div class="title">Cascaded Models for Articulated Pose Estimation (oral)</div>
+  
+  Benjamin Sapp,
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~toshev/">Alexander Toshev</a> and 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar/">Ben Taskar</a>
+<br>ECCV 2010
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/eccv2010_cps.pdf">paper</a> | talk <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/cps_talk.pdf">pdf</a>/<a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/cps_talk.pptx">pptx</a> 
+  | <a href="https://web.archive.org/web/20141007090913/http://www.vision.grasp.upenn.edu/video">project</a>
+  | results <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/buffy_all_tiled_cps.jpg">Buffy v2.1</a> /<a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/pascal_all_tiled_cps.jpg">PASCAL Stickmen</a>
+  | <a class="bibtex" onclick="javascript:toggleBib(&#39;eccv2010bib&#39;)">bibtex</a> 
+  </div>
+
+<div class="bibtex" id="eccv2010bib" style="display:none;">
+  <pre>@inproceedings{sapp2010eccv,
+     author = "Benjamin Sapp and Alexander Toshev and Ben Taskar",
+     title = "Cascaded Models for Articulated Pose Estimation.",
+     booktitle = "ECCV",
+     year = "2010"
+}
+</pre>
+</div>
+</td></tr>
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+<div class="title">Adaptive Pose Priors for Pictorial Structures</div>
+Benjamin Sapp,
+Chris Jordan and 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar/">Ben Taskar</a> 
+<br>CVPR 2010 
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/aps_cvpr2010.pdf">paper</a> | <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/aps_cvpr_poster.pdf">poster</a> | <a href="https://web.archive.org/web/20141007090913/http://www.vision.grasp.upenn.edu/video">project</a>
+  | <a class="bibtex" onclick="javascript:toggleBib(&#39;lppsbib&#39;)">bibtex</a> 
+  | results <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/cvpr2010_ps_results_all.jpg">Buffy v1.0</a>
+</div>
+
+<div class="bibtex" id="lppsbib" style="display:none;">
+  <pre>@inproceedings{sapp2010,
+     author = "Benjamin Sapp and Chris Jordan and Ben Taskar",
+     title = "Adaptive Pose Priors for Pictorial Structures",
+     booktitle = "CVPR",
+     year = "2010"
+}
+</pre>
+</div>
+</td></tr>
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+  <div class="paper">
+<div class="title">Talking Pictures: Temporal Grouping and Dialog-Supervised Person Recognition</div>
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~timothee/">Timothee Cour</a>, 
+Benjamin Sapp,
+Akash Nagle
+and <a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar/">Ben Taskar</a>
+<br>CVPR 2010 <br>
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/naming_dialog_cvpr2010.pdf">paper</a> | <a href="https://web.archive.org/web/20141007090913/http://www.vision.grasp.upenn.edu/video">project</a>   
+| <a class="bibtex" onclick="javascript:toggleBib(&#39;dialogbib&#39;)">bibtex</a>
+</div>
+
+<div class="bibtex" id="dialogbib" style="display:none;">
+  <pre>@inproceedings{cour2010,
+     author = "Timothee Cour and Benjamin Sapp and Akash Nagle and Ben Taskar",
+     title = "Talking Pictures: Temporal Grouping and Dialog-Supervised Person Recognition",
+     booktitle = "CVPR",
+     year = "2010"
+}
+</pre>
+</div>
+</td></tr>
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+<div class="title">Learning From Ambiguously Labeled Images</div>
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~timothee/">Timothee Cour</a>, 
+Benjamin Sapp,
+Chris Jordan and 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar/">Ben Taskar</a> 
+<br>CVPR 2009
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/ambiguous_naming_cvpr2009.pdf">paper</a> | <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/poster_cvpr_2009.pdf">poster</a> | <a href="https://web.archive.org/web/20141007090913/http://www.vision.grasp.upenn.edu/video">project</a>
+| <a class="bibtex" onclick="javascript:toggleBib(&#39;ambigbib&#39;)">bibtex</a>
+</div>
+
+<div class="bibtex" id="ambigbib" style="display:none;">
+  <pre>@inproceedings{cour2009,
+     author = "Timothee Cour and Benjamin Sapp and Chris Jordan and Ben Taskar",
+     title = "Learning from Ambiguously Labeled Images",
+     booktitle = "CVPR",
+     year = "2009"
+}
+</pre>
+</div>
+</td></tr>
+
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+<div class="title">A Fast Data Collection and Augmentation Procedure for Object Recognition</div>
+Benjamin Sapp, 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.cs.cornell.edu/~asaxena">Ashutosh Saxena</a>
+and <a class="personlink" href="https://web.archive.org/web/20141007090913/http://cs.stanford.edu/~ang">Andrew Y. Ng</a>
+<br>AAAI 2008 
+</div>
+<div class="paperstuff">
+<a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/stairdatacollection.pdf">paper</a> |  <a href="https://web.archive.org/web/20141007090913/http://ai.stanford.edu/~asaxena/robotdatacollection/">project</a>
+| <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/data_collection.pdf">slides</a>
+| <a class="bibtex" onclick="javascript:toggleBib(&#39;datacollectionbib&#39;)">bibtex</a>
+</div>
+
+<div class="bibtex" id="datacollectionbib" style="display:none;">
+  <pre>@inproceedings{sapp2008,
+     author = {Sapp, Benjamin and Saxena, Ashutosh and Ng, Andrew Y.},
+     title = {A fast data collection and augmentation procedure for object recognition},
+     booktitle = {AAAI},
+     year = {2008},
+     isbn = {978-1-57735-368-3},
+     pages = {1402--1408},
+     location = {Chicago, Illinois},
+     publisher = {AAAI Press},
+}
+</pre>
+</div>
+</td></tr>
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+<div class="title">Peripheral-Foveal Vision for Real-time Object Recognition and Tracking in Video</div> 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.stanford.edu/~sgould">Stephen Gould</a>,
+Joakim Arfvidsson,
+Adrian Kaehler, 
+Benjamin Sapp,
+Marius Meissner, 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://ai.stanford.edu/~bradski">Gary Bradski</a>, 
+Paul Baumstarck, 
+Sukwon Chung and 
+<a href="https://web.archive.org/web/20141007090913/http://cs.stanford.edu/~ang">Andrew Y. Ng</a>
+<br>IJCAI 2007
+ </div>
+ 
+ <div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/ijcai07-peripheralfoveal.pdf">paper</a> 
+  | <a href="https://web.archive.org/web/20141007090913/http://ai.stanford.edu/~sgould/vision/">videos</a> 
+| <a class="bibtex" onclick="javascript:toggleBib(&#39;peripheralfovealbib&#39;)">bibtex</a>
+</div>  
+
+<div class="bibtex" id="peripheralfovealbib" style="display:none;">
+  <pre>@inproceedings{gould2007,
+     author = {Gould, Stephen and Arfvidsson, Joakim and Kaehler, Adrian and 
+      Sapp, Benjamin and Messner, Marius and 
+      Bradski, Gary and Baumstarck, Paul and Chung, Sukwon and Ng, Andrew Y.},
+     title = {Peripheral-foveal vision 
+      for real-time object recognition and tracking in video},
+     booktitle = {IJCAI07},
+     year = {2007},
+     pages = {2115--2121},
+     location = {Hyderabad, India},
+     publisher = {Morgan Kaufmann Publishers Inc.},
+     address = {San Francisco, CA, USA},
+}
+</pre>
+</div>
+</td></tr>
+
+</tbody></table> <!-- end paper table -->
+<br>
+<h2 style="font-weight: 10;"> Workshops, tech reports, patents, &amp;c. </h2>
+<br>
+<br>
+<table border="0">
+<!-- *************************   -->
+
+<tbody><tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+  <div class="title">Recognizing Manipulation Actions in Arts and Crafts Shows using Domain-Specific Visual and Textual Cues</div>
+B. Sapp, R. Chaudhry, X. Yu, G. Singh, I. Perera, F. Ferraro, E. Tzoukermann, J. Kosecka, J. Neumann 
+<br>ICCV VECTaR Workshop.  November 2011.
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/aaai2011tools-abstract.txt">abstract</a> 
+</div>
+
+
+
+<!-- *************************   -->
+
+</td></tr><tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+<div class="title">Language Models for Semantic Extraction and Filtering in Video Action Recognition</div>
+Tzoukermann E., J. Neumann, J. Kosecka, C. Fermuller, I. Perera, F. Ferraro, B. Sapp, R. Chaudhry and G. Singh
+<br>AAAI Workshop on Language-Action Tools for Cognitive Artificial Agents. August 2011
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/aaai2011tools-abstract.txt">abstract</a> 
+</div>
+
+
+
+<!-- *************************   -->
+
+</td></tr><tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+<div class="title">Randomized Algorithms for Low-Rank Matrix Decomposition</div>
+Benjamin Sapp
+<br>Written Preliminary Examination II. May 2011
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/wpe2-rand-low-rank.pdf">paper</a> |  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/wpe2.pptx">talk pptx</a>
+
+</div>
+
+
+
+<!-- *************************   -->
+
+
+</td></tr><tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+<div class="title">Learning From Ambiguously Labeled Images</div>
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~timothee/">Timothee Cour</a>, 
+Benjamin Sapp,
+Chris Jordan and 
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/~taskar/">Ben Taskar</a> 
+<br>Technical Report MS-CIS-09-07, University of Pennsylvania. May 2009 
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/ambig-tech-report-2009.pdf">paper</a> |  <a href="https://web.archive.org/web/20141007090913/http://www.vision.grasp.upenn.edu/video">project</a>
+| <a class="bibtex" onclick="javascript:toggleBib(&#39;ambigtechbib&#39;)">bibtex</a>
+</div>
+
+<div class="bibtex" id="ambigtechbib" style="display:none;">
+  <pre>@techreport{cour2009,
+     author = "Timothee Cour and Benjamin Sapp and Chris Jordan and Ben Taskar",
+     title = "Learning from Ambiguously Labeled Images",
+     institution = "University of Pennsylvania, Department of Computer and Information Science",
+     year = "2009"
+}
+</pre>
+</div>
+</td></tr>
+
+
+<!-- *************************   -->
+
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+  <div class="title">Method and System for Detection of Contrast Injection in Fluoroscopic Image Sequences</div> 
+  Benjamin Sapp, Wei Zhang, Bogdan Georgescu, Simone Prummer and Dorin Comaniciu
+  <br>US Patent US12/231,770. September 2008 
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.google.com/patents?id=XTy_AAAAEBAJ">filing</a> 
+</div>
+</td></tr>
+
+<!-- *************************   -->
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<div class="paper">
+<div class="title">Peripheral-Foveal Vision for Real-time Object Recognition and Tracking in Video: Live Demonstration</div>
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://www.stanford.edu/~sgould">Stephen Gould</a>,
+Benjamin Sapp,
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://cs.stanford.edu/~mquigley">Morgan Quigley</a>,
+<a class="personlink" href="https://web.archive.org/web/20141007090913/http://cs.stanford.edu/~ang">Andrew Y. Ng</a>.
+<br>NIPS 2006 
+</div>
+<div class="paperstuff">
+  <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/papers/nips06poster.pdf">pdf</a>
+  | <a href="https://web.archive.org/web/20141007090913/http://ai.stanford.edu/~sgould/vision/">project</a> 
+</div></td></tr>
+
+<tr><td class="thumb"><img class="thumb" src="./_bensapp_files/tiger.jpg"></td><td class="paper">
+<a href="https://web.archive.org/web/20141007090913/http://www-cvr.ai.uiuc.edu/~seth/SHV/">
+  <div class="title">Robot Modeling and Control</div> </a>
+M. Spong, S. Hutchinson, M. Vidyasagar,   John Wiley and Sons, New York, 2006. 
+  <br>Acknowledgement for experiments used in Chapter 11.
+
+</td></tr>
+
+</tbody></table> <!-- end paper table -->
+</div>
+
+
+<div id="resume" class="section">
+  <ul>
+    <li>
+      Curriculum Vitæ <a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/bensapp_cv.pdf">pdf</a> (last updated 3/28/2012)
+    </li>
+    <br>
+    <li>
+  Co-organizer for the <a href="https://web.archive.org/web/20141007090913/http://learning.cis.upenn.edu/coarse2fine/">Coarse-to-Fine Learning and Inference</a> NIPS 2010 workshop.
+  </li>
+    <br>
+  <li>  Reviewer for:<br>
+  <ul>
+  <li>  JMLR11, PAMI11, IJCV12</li>
+  <li>NIPS{08,09,10,11}, IJCAI09, AISTATS11, CVPR{11,12}, ICML11, ECCV{10,12}, ICCV11, WiML10</li>
+</ul>
+  </li>
+    <br>
+  <li>
+  Summers spent at:
+  <ul>
+    <li> JHU Center for Language and Speech Processing research workshop, 2010, Baltimore, MD, with Jan Neumann and Jana Kosecka.</li>
+    <li> Siemens Coroporate Research, 2007, Princeton, NJ, with Dorin Comaniciu and Adrian Barbu.</li>
+    <li> Intel, 2006, Santa Clara, CA, with Gary Bradski.</li>
+  </ul>
+  </li>
+</ul>
+
+</div>
+<div id="education" class="section">
+
+  <table border="0">
+    
+    <tbody><tr>
+      <td align="center"><img style="border:0px solid black" src="./_bensapp_files/penn_logo.jpg"></td><td>Ph.D. Computer Science<br> <i>University of 
+            Pennsylvania</i><br> 2007 to 2012 (I think) <br></td>
+        </tr>
+
+        <tr><td>&nbsp;</td><td></td></tr> 
+
+
+  <tr><td>    <center><img border="0" src="./_bensapp_files/stanford-logo.png"></center></td><td>M.S. Computer 
+        Science<br> <i>Stanford University</i><br>2005 to 2007<br></td>
+    </tr>
+
+        <tr><td>&nbsp;</td><td></td></tr> 
+    
+        <tr>
+<td><center><img padding="15" valign="center" src="./_bensapp_files/uiuc-logo.gif"></center></td>
+  <td cellpadding="55">B.Eng. Computer Engineering, 
+    <br>Minor in   Mathematics<br>
+    <i>Univerisity of Illinois Urbana-Champaign</i><br>2001 to 2005</td></tr>
+
+        <tr><td>&nbsp;</td><td></td></tr> 
+
+
+    <tr>
+<td align="right"><a href="https://web.archive.org/web/20141007090913/http://www.seas.upenn.edu/uni.jpg"><img border="0" height="70" src="./_bensapp_files/unigarg.gif"></a></td><td>High School <br><i>University Laboratory High School, 
+    Urbana Illinois</i><br> 1996 to  2001</td>
+</tr>
+
+
+</tbody></table>
+</div>
+
+
+<div id="contact" class="section">
+<table border="0" cellpadding="5" width="100%">
+<tbody><tr><td>
+    Benjamin J Sapp<br>
+    GRASP Lab, L403<br>
+    3330 Walnut St<br>
+    Philadelphia, PA 19104<br>
+</td>
+
+<td>
+<object type="application/x-shockwave-flash" data="https://clients4.google.com/voice/embed/webCallButtonVm" width="230" height="85">
+<param name="movie" value="https://clients4.google.com/voice/embed/webCallButtonVm">
+<param name="wmode" value="transparent">
+<param name="FlashVars" value="id=117b257321a0ba3ad2863e9e876790680336d777&amp;style=0">
+</object>
+</td>
+</tr></tbody></table>
+</div>
+
+
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 9:09:13 Oct 7, 2014 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 3:54:20 Aug 5, 2015.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+</div></body></html>
