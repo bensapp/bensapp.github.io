@@ -50,20 +50,18 @@ a.varlink { text-decoration:none; }
 <div id='wikitext'>
 <div class="img"><img width='100%' src='http://www.vision.grasp.upenn.edu/video/images/vpose2qual.png' alt='' title='' /></div>
 <div class='vspace'></div><h2>Download</h2>
-<a href=https://drive.google.com/folderview?id=0B4K3PZp8xXDJSW5ZY1Y3U2pDS0E&usp=sharing>VideoPose 2.0</a>
-<p class='vspace'>VideoPose 2.0, released June 27, 2011.
-</p>
+<a href=https://drive.google.com/folderview?id=0B4K3PZp8xXDJSW5ZY1Y3U2pDS0E&usp=sharing>VideoPose 2.0, released June 27, 2011.</a>
   <p class='vspace'>Annotation is stored in MATLAB format in <code>clips.mat</code>.  See <code>view_clips.m</code> for usage.  The train/dev/test split we used in our paper, <a class='wikilink' href='https://drive.google.com/file/d/0B4K3PZp8xXDJS0RXWDJGMUQxVlE/view?usp=sharing'>Parsing Human Motion with Stretchable Models</a>, is included in struct <code>partitions</code> in <code>clips.mat</code>.
 </p>
 <div class='vspace'></div><h2>Alternate versions</h2>
-<p>IF for some reason you want the original, uncropped video frames (for e.g., better background subtraction), OR the cropped images, but every frame (we only used every other frame in the above), you can download them here:
+<p>IF for some reason you want the original, uncropped video frames (for e.g., better background subtraction), OR the cropped images, but every frame (we only used every other frame in the above), you access them from the link above.
+They are 
 </p>
 <div class='vspace'></div>
-<table border='1' ><tr ><td  align='left'><a class='urllink' href='http://vision.grasp.upenn.edu/video/VideoPose2-fullframes.zip' rel='nofollow'>VideoPose2-fullframes.zip</a></td><td  align='center'>57MB</td></tr>
-<tr ><td  align='left'><a class='urllink' href='http://vision.grasp.upenn.edu/video/VideoPose2-every-frame.zip' rel='nofollow'>VideoPose2-every-frame.zip</a></td><td  align='center'>35MB</td></tr>
-<tr ><td  align='left'><a class='urllink' href='http://vision.grasp.upenn.edu/video/VideoPose2-fullframe-every-frame.zip' rel='nofollow'>VideoPose2-fullframe-every-frame.zip</a></td><td  align='center'>149MB</td></tr>
-</table>
-<p class='vspace'>and can use <code>clips(i).examples(j).imgfile</code> to index the files as before.  Also, <code>clips(i).examples(j).cropbox</code> is the box used to crop down to obtain the images in the VideoPose2/images directory.
+VideoPose2-fullframes.zip	<br>
+VideoPose2-every-frame.zip<br>
+VideoPose2-fullframe-every-frame.zip	<br>
+<p class='vspace'>You  can use <code>clips(i).examples(j).imgfile</code> to index the files as before.  Also, <code>clips(i).examples(j).cropbox</code> is the box used to crop down to obtain the images in the VideoPose2/images directory.
 </p>
 <div class='vspace'></div><h2>Description</h2>
 <p>The dataset consists of 44 short clips, 2-3 seconds in length, with a total of 1,286 frames. We use 26 clips for training, recycle 1 training clip for a development set, and use 18 for testing. The dataset fixes global scale and translation of the person, as is typically assumed in order to avoid confounding detection errors with pose estimation errors.
